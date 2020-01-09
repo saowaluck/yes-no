@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from answers.views import answer_views, create_answer_views, CreateAnswerView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('answer/', answer_views, name='answer_views_url'),
+    path('create-answer/', create_answer_views, name='create_answer_views'),
+    path('create-answer-class/', CreateAnswerView.as_view(), name='create_answer_class_views'),
 ]
